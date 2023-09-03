@@ -1,0 +1,16 @@
+resource "azurerm_virtual_network" "example" {
+  name                = var.network_name
+  location            = var.location
+  resource_group_name = var.rg_name
+  address_space       = var.address_space
+
+  dynamic "subnet" {
+    for_each = var.subnets
+
+    content {
+      name           = var.subnet_name
+      address_prefix = var.subnet_address
+    }
+    
+  }
+}
