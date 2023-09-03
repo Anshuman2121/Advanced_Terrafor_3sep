@@ -6,12 +6,6 @@ terraform {
     }
   }
 
-  backend "azurerm" {
-    resource_group_name  = "Hello"
-    storage_account_name = "store24aug"
-    container_name       = "terraform"
-    key                  = "network/terraform.tfstate"
-  }
 }
 
 provider "azurerm" {
